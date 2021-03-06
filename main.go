@@ -3,17 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var name string
-	name = "Golang"
-	fmt.Println(name)
+	score := 80
+	var grade string
 
-	var number int = 20
-	// equals to: number := 20
-	fmt.Println(number)
+	if score > 90 {
+		grade = "A"
+	} else if (score > 70) {
+		grade = "B"
+	} else if (score > 50) {
+		grade = "C"
+	} else {
+		grade = "D"
+	}
 
-	amount := 214.41
-	fmt.Println(amount)
-
-	var incorrect bool = false
-	fmt.Println(incorrect)
+	fmt.Println("Your Grade:")
+	fmt.Println(grade)
 }
