@@ -5,15 +5,20 @@ import (
 )
 
 func main() {
-	var gamingConsoles []string
+	var myMap map[string]int
+	myMap = map[string]int{}
 
-	gamingConsoles = append(gamingConsoles, "Playstation 4")
-	gamingConsoles = append(gamingConsoles, "Playstation 5")
-	gamingConsoles = append(gamingConsoles, "Nintendo Switch")
+	myMap["Go"] = 9
+	myMap["PHP"] = 8
+	myMap["NodeJS"] = 7
 
-	fmt.Println(gamingConsoles)
+	fmt.Println(myMap)
 
-	for _, console := range gamingConsoles {
-		fmt.Println(console)
+	newMap := map[string]string{
+		"satu": "one",
+		"dua": "two",
+		"tiga": "three",
 	}
+
+	fmt.Println(newMap)
 }
