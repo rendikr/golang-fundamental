@@ -5,10 +5,14 @@ import (
 )
 
 func main() {
-	sum := add(5, 9)
-	fmt.Println(sum)
+	luas, keliling := calculate(4, 5)
+	fmt.Println(luas)
+	fmt.Println(keliling)
 }
 
-func add(number int, numberTwo int) int {
-	return number + numberTwo
+func calculate(panjang int, lebar int) (int, int) {
+	luas := panjang * lebar
+	keliling := 2 * (panjang + lebar)
+
+	return luas, keliling
 }
