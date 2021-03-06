@@ -5,18 +5,10 @@ import (
 )
 
 func main() {
-	fmt.Println("I'm learning Go")
-	printMessage("This is a good programming language")
-	sentence := printResult("I'm learning Go")
-	fmt.Println(sentence)
-	fmt.Println(printResult("I'm learning Go"))
+	sum := add(5, 9)
+	fmt.Println(sum)
 }
 
-func printMessage(message string) {
-	fmt.Println(message)
-}
-
-func printResult(message string) string {
-	newMessage := message + " for daily learn"
-	return newMessage
+func add(number int, numberTwo int) int {
+	return number + numberTwo
 }
