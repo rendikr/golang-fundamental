@@ -12,6 +12,10 @@ type User struct {
 	IsActive bool
 }
 
+func (user User) display() string {
+	return fmt.Sprintf("Name : %s %s, Username : %s", user.FirstName, user.LastName, user.Username)
+}
+
 type Group struct {
 	Name string
 	Admin User
@@ -27,28 +31,31 @@ func main() {
 	firstUser.Username = "rendikr"
 	firstUser.IsActive = true
 
-	secondUser := User{
-		ID: 2,
-		FirstName: "Asep",
-		LastName: "Jaelani",
-		Username: "ajae",
-		IsActive: true,
-	}
+	result := firstUser.display()
 
-	thirdUser := User{
-		ID: 3,
-		FirstName: "Maman",
-		LastName: "Jawa",
-		Username: "Mamawa",
-		IsActive: true,
-	}
+	fmt.Println(result)
 
-	users := []User{firstUser, secondUser, thirdUser}
+	// secondUser := User{
+	// 	ID: 2,
+	// 	FirstName: "Asep",
+	// 	LastName: "Jaelani",
+	// 	Username: "ajae",
+	// 	IsActive: true,
+	// }
 
-	group := Group{"Gamer", secondUser, users, true}
+	// thirdUser := User{
+	// 	ID: 3,
+	// 	FirstName: "Maman",
+	// 	LastName: "Jawa",
+	// 	Username: "Mamawa",
+	// 	IsActive: true,
+	// }
 
-	// fmt.Println(group)
-	displayGroup(group)
+	// users := []User{firstUser, secondUser, thirdUser}
+
+	// group := Group{"Gamer", secondUser, users, true}
+
+	// displayGroup(group)
 }
 
 func displayGroup(group Group) {
@@ -63,8 +70,4 @@ func displayGroup(group Group) {
 		fmt.Printf("User %d : %s %s", (index + 1), user.FirstName, user.LastName)
 		fmt.Println("")
 	}
-}
-
-func displayUser(user User) string {
-	return fmt.Sprintf("Name : %s %s Username : %s", user.FirstName, user.LastName, user.Username)
 }
