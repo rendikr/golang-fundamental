@@ -5,20 +5,18 @@ import (
 )
 
 func main() {
-	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
-	var goodScores []int
-	var total int
-	// goodScores has a score >= 90
+	fmt.Println("I'm learning Go")
+	printMessage("This is a good programming language")
+	sentence := printResult("I'm learning Go")
+	fmt.Println(sentence)
+	fmt.Println(printResult("I'm learning Go"))
+}
 
-	for _, score := range scores {
-		if (score >= 90) {
-			goodScores = append(goodScores, score)
-		}
+func printMessage(message string) {
+	fmt.Println(message)
+}
 
-		total = total + score
-	}
-
-	average := float64(total) / float64(len(scores))
-	fmt.Println("Average :", average)
-	fmt.Println("Good Scores :", goodScores)
+func printResult(message string) string {
+	newMessage := message + " for daily learn"
+	return newMessage
 }
