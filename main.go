@@ -1,19 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"golang-fundamental/calculation"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello World!")
+	var name string
+	name = "Golang"
+	fmt.Println(name)
 
-	// sentence := TestString()
-	// fmt.Println(sentence)
+	var number int = 20
+	// equals to: number := 20
+	fmt.Println(number)
 
-	addResult := calculation.Add(2, 3)
-	fmt.Println(addResult)
+	amount := 214.41
+	fmt.Println(amount)
 
-	multiplyResult := calculation.Multiply(5, 3)
-	fmt.Println(multiplyResult)
+	var incorrect bool = false
+	fmt.Println(incorrect)
 }
