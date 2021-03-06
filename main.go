@@ -5,14 +5,20 @@ import (
 )
 
 func main() {
-	// create a slice with value is a map
-	students := []map[string]string{
-		{"name": "Rendi K.", "score": "A"},
-		{"name": "Asep Jaelani", "score": "B"},
-		{"name": "Maman Jawa", "score": "C"},
+	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
+	var goodScores []int
+	var total int
+	// goodScores has a score >= 90
+
+	for _, score := range scores {
+		if (score >= 90) {
+			goodScores = append(goodScores, score)
+		}
+
+		total = total + score
 	}
 
-	for _, student := range students {
-		fmt.Println("Student Name :", student["name"], " Score :", student["score"])
-	}
+	average := float64(total) / float64(len(scores))
+	fmt.Println("Average :", average)
+	fmt.Println("Good Scores :", goodScores)
 }
