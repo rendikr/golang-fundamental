@@ -3,18 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	number := 2
+	for i := 1; i <= 10; i++ {
+		fmt.Println("I'm learning Go! :", i)
+	}
 
-	switch number {
-		case 1:
-			fmt.Println("One")
-		case 2:
-			fmt.Println("Two")
-		case 3:
-			fmt.Println("Three")
-		case 4:
-			fmt.Println("Four")
-		default:
-			fmt.Println("Greater than Four!")
+	n := 11
+	for n <= 20 {
+		fmt.Println("I'm learning Go! :", n)
+		n++
+	}
+
+	title := "Golang Programming Language"
+	for index, letter := range title {
+		fmt.Println("Index :", index, " Letter :", letter, " Letter String: ", string(letter))
+	}
+
+	newTitle := "Golang Best For Learning"
+	for _, letter := range newTitle {
+		fmt.Println("Letter :", letter, " Letter String: ", string(letter))
 	}
 }
