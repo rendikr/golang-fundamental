@@ -3,19 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	score := 80
-	var grade string
+	number := 2
 
-	if score > 90 {
-		grade = "A"
-	} else if (score > 70) {
-		grade = "B"
-	} else if (score > 50) {
-		grade = "C"
-	} else {
-		grade = "D"
+	switch number {
+		case 1:
+			fmt.Println("One")
+		case 2:
+			fmt.Println("Two")
+		case 3:
+			fmt.Println("Three")
+		case 4:
+			fmt.Println("Four")
+		default:
+			fmt.Println("Greater than Four!")
 	}
-
-	fmt.Println("Your Grade:")
-	fmt.Println(grade)
 }
