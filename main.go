@@ -5,31 +5,14 @@ import (
 )
 
 func main() {
-	myMap := map[string]string{
-		"satu": "one",
-		"dua": "two",
-		"tiga": "three",
-		"empat": "four",
+	// create a slice with value is a map
+	students := []map[string]string{
+		{"name": "Rendi K.", "score": "A"},
+		{"name": "Asep Jaelani", "score": "B"},
+		{"name": "Maman Jawa", "score": "C"},
 	}
 
-	for key, value := range myMap {
-		fmt.Println("Key :", key, " Value :", value)
+	for _, student := range students {
+		fmt.Println("Student Name :", student["name"], " Score :", student["score"])
 	}
-
-	fmt.Println("===")
-
-	delete(myMap, "dua")
-	// will delete myMap with key "lima"
-
-	for key, value := range myMap {
-		fmt.Println("Key :", key, " Value :", value)
-	}
-
-	tigaValue := myMap["tiga"]
-	fmt.Println(tigaValue)
-
-	limaValue, isAvailable := myMap["lima"]
-	fmt.Println(isAvailable)
-	fmt.Println(limaValue)
-	// isAvailable being a checker whether myMap has "lima" key
 }
