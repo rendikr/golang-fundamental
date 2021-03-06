@@ -5,23 +5,18 @@ import (
 )
 
 func main() {
-	// numberA := 5
-	// numberB := &numberA
-	// numberC := *numberB
+	number := 5
+	fmt.Println("Old value :", number)
+	fmt.Println("Memory: ", &number)
 
-	// fmt.Println(numberA)
-	// fmt.Println(numberB)
-	// fmt.Println(numberC)
+	change(&number, 100)
 
-	var numberA int = 5
-	var numberB *int = &numberA
+	fmt.Println("New value :", number)
+	fmt.Println("Memory: ", &number)
+}
 
-	fmt.Println(numberA)
-	fmt.Println(numberB)
-	fmt.Println(*numberB)
-
-	numberA = 20
-
-	fmt.Println(numberA)
-	fmt.Println(numberB)
+func change(old *int, new int) {
+	*old = new
+	fmt.Println("Value inside function :", *old)
+	fmt.Println("Memory inside function: ", old)
 }
