@@ -11,6 +11,9 @@ func main() {
 	// sentence := TestString()
 	// fmt.Println(sentence)
 
-	result := calculation.Add(2, 3)
-	fmt.Println(result)
+	addResult := calculation.Add(2, 3)
+	fmt.Println(addResult)
+
+	multiplyResult := calculation.Multiply(5, 3)
+	fmt.Println(multiplyResult)
 }
