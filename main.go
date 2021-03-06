@@ -20,8 +20,6 @@ func main() {
 	firstUser.Username = "rendikr"
 	firstUser.IsActive = true
 
-	fmt.Println(firstUser)
-
 	secondUser := User{
 		ID: 2,
 		FirstName: "Asep",
@@ -30,5 +28,10 @@ func main() {
 		IsActive: true,
 	}
 
-	fmt.Println(secondUser)
+	fmt.Println(displayUser(firstUser))
+	fmt.Println(displayUser(secondUser))
+}
+
+func displayUser(user User) string {
+	return fmt.Sprintf("Name : %s %s Username : %s", user.FirstName, user.LastName, user.Username)
 }
