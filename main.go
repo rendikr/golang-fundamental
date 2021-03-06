@@ -5,20 +5,31 @@ import (
 )
 
 func main() {
-	var myMap map[string]int
-	myMap = map[string]int{}
-
-	myMap["Go"] = 9
-	myMap["PHP"] = 8
-	myMap["NodeJS"] = 7
-
-	fmt.Println(myMap)
-
-	newMap := map[string]string{
+	myMap := map[string]string{
 		"satu": "one",
 		"dua": "two",
 		"tiga": "three",
+		"empat": "four",
 	}
 
-	fmt.Println(newMap)
+	for key, value := range myMap {
+		fmt.Println("Key :", key, " Value :", value)
+	}
+
+	fmt.Println("===")
+
+	delete(myMap, "dua")
+	// will delete myMap with key "lima"
+
+	for key, value := range myMap {
+		fmt.Println("Key :", key, " Value :", value)
+	}
+
+	tigaValue := myMap["tiga"]
+	fmt.Println(tigaValue)
+
+	limaValue, isAvailable := myMap["lima"]
+	fmt.Println(isAvailable)
+	fmt.Println(limaValue)
+	// isAvailable being a checker whether myMap has "lima" key
 }
