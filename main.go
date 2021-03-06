@@ -1,26 +1,35 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type Gamer struct {
-	Name  string
-	Games []string
+type Luas interface {
+	HitungLuas() int
 }
 
-func (gamer *Gamer) AddGame(gameName string) {
-	gamer.Games = append(gamer.Games, gameName)
+type Persegi struct {
+	Sisi int
+}
+
+func (persegi Persegi) HitungLuas() int {
+	return persegi.Sisi * persegi.Sisi
+}
+
+type PersegiPanjang struct {
+	Panjang int
+	Lebar   int
+}
+
+func (persegiPanjang PersegiPanjang) HitungLuas() int {
+	return persegiPanjang.Panjang * persegiPanjang.Lebar
 }
 
 func main() {
-	gamer := Gamer{Name: "Asep"}
+	persegi := Persegi{5}
+	persegiPanjang := PersegiPanjang{5, 4}
 
-	gamer.AddGame("BioShock 3")
-	gamer.AddGame("Hunt: Showdown")
-	gamer.AddGame("Battlefield 1")
+	luasPersegi := persegi.HitungLuas()
+	luasPersegiPanjang := persegiPanjang.HitungLuas()
 
-	for _, game := range gamer.Games {
-		fmt.Println(game)
-	}
+	fmt.Println(luasPersegi)
+	fmt.Println(luasPersegiPanjang)
 }
